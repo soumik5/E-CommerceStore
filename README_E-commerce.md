@@ -29,34 +29,96 @@ cd ../../frontend && npm install
 <img width="861" height="917" alt="image" src="https://github.com/user-attachments/assets/90e0e1c8-fc0c-4fdd-bd9c-d9feea55b84d" />
 <img width="1877" height="972" alt="image" src="https://github.com/user-attachments/assets/b9552fd4-348c-4dfb-b05d-145291e3b359" />
 
-3. Set up environment variables
-backend/user-service/.env:
-```
+3. **Set up environment variables**
+
+Create `.env` files in each service directory:
+
+**backend/user-service/.env:**
+```env
 PORT=3001
 MONGODB_URI=mongodb://localhost:27017/ecommerce_users
 JWT_SECRET=your-jwt-secret-key
-backend/product-service/.env:
+```
 
+**backend/product-service/.env:**
+```env
 PORT=3002
 MONGODB_URI=mongodb://localhost:27017/ecommerce_products
-backend/cart-service/.env:
+```
 
+**backend/cart-service/.env:**
+```env
 PORT=3003
 MONGODB_URI=mongodb://localhost:27017/ecommerce_carts
 PRODUCT_SERVICE_URL=http://localhost:3002
-backend/order-service/.env:
+```
 
+**backend/order-service/.env:**
+```env
 PORT=3004
 MONGODB_URI=mongodb://localhost:27017/ecommerce_orders
 CART_SERVICE_URL=http://localhost:3003
 PRODUCT_SERVICE_URL=http://localhost:3002
 USER_SERVICE_URL=http://localhost:3001
 ```
-frontend/.env:
-```
+
+**frontend/.env:**
+```env
 REACT_APP_USER_SERVICE_URL=http://localhost:3001
 REACT_APP_PRODUCT_SERVICE_URL=http://localhost:3002
 REACT_APP_CART_SERVICE_URL=http://localhost:3003
 REACT_APP_ORDER_SERVICE_URL=http://localhost:3004
 ```
+
+### Running the Application
+
+
+** Run services individually**
+
+Terminal 1 - User Service:
+```bash
+cd backend/user-service && npm start
+```
+<img width="722" height="497" alt="image" src="https://github.com/user-attachments/assets/fab58abe-f244-448d-90fe-a60b3c700f64" />
+
+
+Terminal 2 - Product Service:
+```bash
+cd backend/product-service && npm start
+```
+<img width="902" height="502" alt="image" src="https://github.com/user-attachments/assets/d3b67241-030d-4f7e-a291-afe96cb49021" />
+
+Terminal 3 - Cart Service:
+```bash
+cd backend/cart-service && npm start
+```
+<img width="1621" height="952" alt="image" src="https://github.com/user-attachments/assets/8e34bd83-c4a6-4cf3-b9ae-b4d55e5b7b2d" />
+
+Terminal 4 - Order Service:
+```bash
+cd backend/order-service && npm start
+```
+<img width="885" height="576" alt="image" src="https://github.com/user-attachments/assets/f9c307b2-286e-4c0d-ae5b-d3e0cc6357f0" />
+
+Terminal 5 - Frontend:
+```bash
+cd frontend && npm start
+```
+<img width="1887" height="841" alt="image" src="https://github.com/user-attachments/assets/b854d879-f8b1-40c9-9c98-b836980206b5" />
+
+The application will be available at:
+- Frontend: http://localhost:3000
+<img width="1917" height="850" alt="image" src="https://github.com/user-attachments/assets/e438d80b-0f49-4bb3-bf4b-bb433686bc55" />
+
+- User Service: http://localhost:3001
+<img width="532" height="332" alt="image" src="https://github.com/user-attachments/assets/8a662700-14ed-45d8-8eef-6c18ac4a17b0" />
+
+- Product Service: http://localhost:3002
+<img width="570" height="375" alt="image" src="https://github.com/user-attachments/assets/dd34f5e7-9013-454f-bba1-a6626c50c030" />
+
+- Cart Service: http://localhost:3003
+<img width="696" height="502" alt="image" src="https://github.com/user-attachments/assets/b6c54b43-36ac-46f7-b54d-349de03bbd9b" />
+
+- Order Service: http://localhost:3004
+<img width="567" height="287" alt="image" src="https://github.com/user-attachments/assets/bed2faf8-9272-4190-87ef-95094e42feb4" />
 
