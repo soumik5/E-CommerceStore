@@ -122,7 +122,8 @@ The application will be available at:
 - Order Service: http://localhost:3004
 <img width="567" height="287" alt="image" src="https://github.com/user-attachments/assets/bed2faf8-9272-4190-87ef-95094e42feb4" />
 
-- ##  Application Setup (Docker) 
+- ##  Application Setup (Docker)
+
 ### 1. Create Dockerfiles for each of the 5 services: (Each service must expose a relevant port and return a sample response (e.g., "user Service Running")
 - Frontend Dockerfile:
 <img width="940" height="646" alt="image" src="https://github.com/user-attachments/assets/4108acc2-b44a-42a8-aff8-ba674d86978f" />
@@ -146,5 +147,20 @@ The application will be available at:
 
 
 ### 3. Tag and push the images to Docker Hub 
+- pushed all the docker images to my dockerhub.
 
+<img width="1917" height="572" alt="image" src="https://github.com/user-attachments/assets/2c00f333-564f-4d5e-8495-27164ed80370" />
+
+- ## Infrastructure Provisioning with Terraform
+
+<img width="772" height="882" alt="image" src="https://github.com/user-attachments/assets/3675d16c-ff07-44c8-8b88-43999ce51901" />
+
+
+### 1. VPC with at least one public subnet:
+
+### 2. 1 or more EC2 Instances to host the Docker containers 
+### 3. Security Groups to allow: 
+- #### Inbound HTTP (port 80 or 3000) to the frontend 
+                                                               
+- #### Internal communication between services (custom ports, e.g., 3001–3004) 
 
