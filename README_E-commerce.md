@@ -192,10 +192,28 @@ The application will be available at:
 
 - Run the containers on proper portsDocker 
 
-- Docker is installed in EC2 via user-data script and it has successfully pulled all the images and containers are also running on proper ports.
+- Docker is installed in EC2 via user-data script and it has successfully pulled all the images from Dockerhub and containers are also running on proper ports.
 
   <img width="1670" height="447" alt="image" src="https://github.com/user-attachments/assets/4e62a828-f97a-42d9-869b-63fe4af61d3c" />
 
+- # Deployment and Accessibility
+
+### 1. Ensure the frontend service is publicly accessible 
+#### you can see frontend is live and publicly accessible.
+
+<img width="1911" height="840" alt="image" src="https://github.com/user-attachments/assets/a3812882-0941-4c60-b7e7-f838ae85d8a5" />
+
+
+### 2. Verify backend containers are running.
+
+#### Backend containers are already up and running.
+
+<img width="1732" height="422" alt="image" src="https://github.com/user-attachments/assets/5a2d596e-e4c7-450e-9a10-262f65790744" />
+
+
+### 3. Use Terraform output to print the public IP or DNS of the application
+
+<img width="687" height="121" alt="image" src="https://github.com/user-attachments/assets/e0589f9b-b496-41ee-9e63-d4475dfc85fb" />
 
 
 
