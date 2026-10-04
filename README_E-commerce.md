@@ -1,6 +1,6 @@
 # Deploy a Multi-Service Node.js E-commerce Application Using Terraform and Docker
 # Requirements and implementation steps: 
-- ##  Local Implementation:
+- # Local Implementation:
 local Installation
 1. Clone the repository
 ```
@@ -122,7 +122,7 @@ The application will be available at:
 - Order Service: http://localhost:3004
 <img width="567" height="287" alt="image" src="https://github.com/user-attachments/assets/bed2faf8-9272-4190-87ef-95094e42feb4" />
 
-- ##  Application Setup (Docker)
+- #  Application Setup (Docker)
 
 ### 1. Create Dockerfiles for each of the 5 services: (Each service must expose a relevant port and return a sample response (e.g., "user Service Running")
 - Frontend Dockerfile:
@@ -151,7 +151,7 @@ The application will be available at:
 
 <img width="1917" height="572" alt="image" src="https://github.com/user-attachments/assets/2c00f333-564f-4d5e-8495-27164ed80370" />
 
-- ## Infrastructure Provisioning with Terraform
+- #  Infrastructure Provisioning with Terraform
 
 <img width="772" height="882" alt="image" src="https://github.com/user-attachments/assets/3675d16c-ff07-44c8-8b88-43999ce51901" />
 
