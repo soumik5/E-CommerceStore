@@ -154,13 +154,49 @@ The application will be available at:
 - #  Infrastructure Provisioning with Terraform
 
 <img width="772" height="882" alt="image" src="https://github.com/user-attachments/assets/3675d16c-ff07-44c8-8b88-43999ce51901" />
+<img width="1312" height="1030" alt="image" src="https://github.com/user-attachments/assets/4cc9f107-7fe8-4853-b82e-e463bd9a85d4" />
+
 
 
 ### 1. VPC with at least one public subnet:
 
-### 2. 1 or more EC2 Instances to host the Docker containers 
+#### VPC with at least one public subnet is created. Please refer to terraform.tfstate file for your reference
+
+<img width="1582" height="370" alt="image" src="https://github.com/user-attachments/assets/6ab311b8-8571-471b-9f64-e70541343cc3" />
+
+
+### 2. 1 or more EC2 Instances to host the Docker containers
+
+#### one EC2 Instance is also created to host the Docker containers. Please refer to terraform.tfstate file for your reference.
+
+<img width="1656" height="457" alt="image" src="https://github.com/user-attachments/assets/429dad39-6859-4d61-b698-292d039541af" />
+
+
 ### 3. Security Groups to allow: 
-- #### Inbound HTTP (port 80 or 3000) to the frontend 
+- #### Inbound HTTP (port 80 or 3000) to the frontend
+
+#### Inbound rule allowed for HTTP (port 80 or 3000) to the frontend
                                                                
 - #### Internal communication between services (custom ports, e.g., 3001–3004) 
+
+#### Internal communication between services (custom ports, e.g., 3001–3004) are also there.
+
+<img width="1797" height="746" alt="image" src="https://github.com/user-attachments/assets/131d583c-7892-4c99-b82a-9878169dac32" />
+
+### 4. Use Terraform provisioners or user-data scripts to:
+
+
+- Install Docker on EC2
+
+- Pull all 5 images from Docker Hub
+
+- Run the containers on proper portsDocker 
+
+- Docker is installed in EC2 via user-data script and it has successfully pulled all the images and containers are also running on proper ports.
+
+  <img width="1670" height="447" alt="image" src="https://github.com/user-attachments/assets/4e62a828-f97a-42d9-869b-63fe4af61d3c" />
+
+
+
+
 
