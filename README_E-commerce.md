@@ -122,3 +122,29 @@ The application will be available at:
 - Order Service: http://localhost:3004
 <img width="567" height="287" alt="image" src="https://github.com/user-attachments/assets/bed2faf8-9272-4190-87ef-95094e42feb4" />
 
+- ##  Application Setup (Docker) 
+### 1. Create Dockerfiles for each of the 5 services: (Each service must expose a relevant port and return a sample response (e.g., "user Service Running")
+- Frontend Dockerfile:
+<img width="940" height="646" alt="image" src="https://github.com/user-attachments/assets/4108acc2-b44a-42a8-aff8-ba674d86978f" />
+
+- Backend user-service Dockerfile:
+<img width="900" height="715" alt="image" src="https://github.com/user-attachments/assets/349a466e-b0b1-4591-af0d-74de851be41a" />
+
+- Backend product-service Dockerfile:
+<img width="851" height="677" alt="image" src="https://github.com/user-attachments/assets/41749d82-3c15-4eaa-9193-d65eacdfe49d" />
+
+- Backend order-service Dockerfile:
+<img width="887" height="697" alt="image" src="https://github.com/user-attachments/assets/0fbd6c91-0ddc-40fa-8fd3-41c94e391125" />
+
+- Backend cart-service Dockerfile:
+<img width="802" height="757" alt="image" src="https://github.com/user-attachments/assets/2606f189-e435-45e6-aac0-a23a225e6c49" />
+
+
+### 2. Build and test the Docker images locally
+
+- created Docker-compose.yaml file to build the images locally. the file is placed at the root of the git repo for your reference.
+
+
+### 3. Tag and push the images to Docker Hub 
+
+
