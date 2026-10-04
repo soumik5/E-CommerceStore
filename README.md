@@ -1,110 +1,16 @@
-# E-Commerce Microservices Application
-
-A full-stack MERN e-commerce application built with microservices architecture, featuring 4 separate Node.js backend services and a React frontend.
-
-## 🏗️ Architecture Overview
-
-This application demonstrates modern microservices architecture with the following components:
-
+# Deploy a Multi-Service Node.js E-commerce Application Using Terraform and Docker
+# Requirements and implementation steps: 
+- # Local Implementation:
+local Installation
+1. Clone the repository
 ```
-Frontend (React) → API Gateway → Microservices
-                                    ├── User Service (3001)
-                                    ├── Product Service (3002)
-                                    ├── Cart Service (3003)
-                                    └── Order Service (3004)
+git clone https://github.com/soumik5/E-CommerceStore.git
+cd  E-CommerceStore/
 ```
+ <img width="791" height="862" alt="image" src="https://github.com/user-attachments/assets/0d7444be-f514-45de-a220-950921259d88" />
 
-## 🔧 Technology Stack
-
-### Backend
-- **Runtime**: Node.js with Express.js
-- **Database**: MongoDB with Mongoose ODM
-- **Authentication**: JWT tokens
-- **Architecture**: RESTful APIs with microservices
-
-### Frontend
-- **Framework**: React 18
-- **Routing**: React Router
-- **State Management**: React Query + Context API
-- **HTTP Client**: Axios
-- **Styling**: CSS3 with responsive design
-
-## 📦 Microservices
-
-### 1. User Service (Port 3001)
-- User registration and authentication
-- Profile management
-- JWT token generation and validation
-- User data persistence
-
-**Endpoints:**
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User authentication
-- `GET /api/auth/me` - Get current user
-- `GET /api/users/profile` - Get user profile
-- `PUT /api/users/profile` - Update user profile
-
-### 2. Product Service (Port 3002)
-- Product catalog management
-- Category management
-- Product search and filtering
-- Inventory tracking
-
-**Endpoints:**
-- `GET /api/products` - Get products with filtering/pagination
-- `GET /api/products/:id` - Get single product
-- `POST /api/products` - Create product (admin)
-- `PUT /api/products/:id` - Update product (admin)
-- `DELETE /api/products/:id` - Soft delete product (admin)
-- `GET /api/categories` - Get all categories
-- `POST /api/categories` - Create category (admin)
-
-### 3. Cart Service (Port 3003)
-- Shopping cart management
-- Add/remove/update cart items
-- Cart validation
-- Integration with Product Service
-
-**Endpoints:**
-- `GET /api/cart/:userId` - Get user's cart
-- `POST /api/cart/:userId/items` - Add item to cart
-- `PUT /api/cart/:userId/items/:productId` - Update cart item
-- `DELETE /api/cart/:userId/items/:productId` - Remove cart item
-- `DELETE /api/cart/:userId` - Clear entire cart
-- `POST /api/cart/:userId/validate` - Validate cart items
-
-### 4. Order Service (Port 3004)
-- Order creation and management
-- Payment processing simulation
-- Order status tracking
-- Integration with Cart and Product Services
-
-**Endpoints:**
-- `GET /api/orders/user/:userId` - Get user's orders
-- `GET /api/orders/:id` - Get single order
-- `POST /api/orders` - Create new order
-- `PUT /api/orders/:id/status` - Update order status
-- `DELETE /api/orders/:id` - Cancel order
-- `POST /api/payments/process` - Process payment
-- `POST /api/payments/refund` - Process refund
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 16+ and npm
-- MongoDB (local or cloud instance)
-
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone <repository-url>
-cd ecommerce-microservices
+2. Install dependencies for each service
 ```
-
-2. **Install dependencies for each service**
-```bash
-
 # Install User Service dependencies
 cd backend/user-service && npm install
 
@@ -120,6 +26,8 @@ cd ../order-service && npm install
 # Install Frontend dependencies
 cd ../../frontend && npm install
 ```
+<img width="861" height="917" alt="image" src="https://github.com/user-attachments/assets/90e0e1c8-fc0c-4fdd-bd9c-d9feea55b84d" />
+<img width="1877" height="972" alt="image" src="https://github.com/user-attachments/assets/b9552fd4-348c-4dfb-b05d-145291e3b359" />
 
 3. **Set up environment variables**
 
@@ -171,178 +79,142 @@ Terminal 1 - User Service:
 ```bash
 cd backend/user-service && npm start
 ```
+<img width="722" height="497" alt="image" src="https://github.com/user-attachments/assets/fab58abe-f244-448d-90fe-a60b3c700f64" />
+
 
 Terminal 2 - Product Service:
 ```bash
 cd backend/product-service && npm start
 ```
+<img width="902" height="502" alt="image" src="https://github.com/user-attachments/assets/d3b67241-030d-4f7e-a291-afe96cb49021" />
 
 Terminal 3 - Cart Service:
 ```bash
 cd backend/cart-service && npm start
 ```
+<img width="1621" height="952" alt="image" src="https://github.com/user-attachments/assets/8e34bd83-c4a6-4cf3-b9ae-b4d55e5b7b2d" />
 
 Terminal 4 - Order Service:
 ```bash
 cd backend/order-service && npm start
 ```
+<img width="885" height="576" alt="image" src="https://github.com/user-attachments/assets/f9c307b2-286e-4c0d-ae5b-d3e0cc6357f0" />
 
 Terminal 5 - Frontend:
 ```bash
 cd frontend && npm start
 ```
+<img width="1887" height="841" alt="image" src="https://github.com/user-attachments/assets/b854d879-f8b1-40c9-9c98-b836980206b5" />
 
 The application will be available at:
 - Frontend: http://localhost:3000
+<img width="1917" height="850" alt="image" src="https://github.com/user-attachments/assets/e438d80b-0f49-4bb3-bf4b-bb433686bc55" />
+
 - User Service: http://localhost:3001
+<img width="532" height="332" alt="image" src="https://github.com/user-attachments/assets/8a662700-14ed-45d8-8eef-6c18ac4a17b0" />
+
 - Product Service: http://localhost:3002
+<img width="570" height="375" alt="image" src="https://github.com/user-attachments/assets/dd34f5e7-9013-454f-bba1-a6626c50c030" />
+
 - Cart Service: http://localhost:3003
+<img width="696" height="502" alt="image" src="https://github.com/user-attachments/assets/b6c54b43-36ac-46f7-b54d-349de03bbd9b" />
+
 - Order Service: http://localhost:3004
+<img width="567" height="287" alt="image" src="https://github.com/user-attachments/assets/bed2faf8-9272-4190-87ef-95094e42feb4" />
 
-## 🎯 Features
+- #  Application Setup (Docker)
 
-### User Features
-- **Authentication**: Register and login with JWT tokens
-- **Product Browsing**: View products with search, filtering, and pagination
-- **Shopping Cart**: Add, update, and remove items
-- **Checkout Process**: Complete order placement with shipping and payment
-- **Order Management**: View order history and track status
-- **Profile Management**: Update personal information and addresses
+### 1. Create Dockerfiles for each of the 5 services: (Each service must expose a relevant port and return a sample response (e.g., "user Service Running")
+- Frontend Dockerfile:
+<img width="940" height="646" alt="image" src="https://github.com/user-attachments/assets/4108acc2-b44a-42a8-aff8-ba674d86978f" />
 
-### Admin Features (Future Enhancement)
-- Product and category management
-- Order status updates
-- Inventory management
-- User management
+- Backend user-service Dockerfile:
+<img width="900" height="715" alt="image" src="https://github.com/user-attachments/assets/349a466e-b0b1-4591-af0d-74de851be41a" />
 
-### Technical Features
-- **Microservices Architecture**: Loosely coupled services
-- **RESTful APIs**: Standard HTTP methods and status codes
-- **Data Validation**: Input validation and error handling
-- **Cross-Service Communication**: HTTP-based service interactions
-- **Responsive Design**: Mobile-friendly user interface
-- **Error Handling**: Comprehensive error management
-- **Loading States**: User-friendly loading indicators
+- Backend product-service Dockerfile:
+<img width="851" height="677" alt="image" src="https://github.com/user-attachments/assets/41749d82-3c15-4eaa-9193-d65eacdfe49d" />
 
-## 📁 Project Structure
+- Backend order-service Dockerfile:
+<img width="887" height="697" alt="image" src="https://github.com/user-attachments/assets/0fbd6c91-0ddc-40fa-8fd3-41c94e391125" />
 
-```
-ecommerce-microservices/
-├── backend/
-│   ├── user-service/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── middleware/
-│   │   ├── server.js
-│   │   └── package.json
-│   ├── product-service/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── server.js
-│   │   └── package.json
-│   ├── cart-service/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── server.js
-│   │   └── package.json
-│   └── order-service/
-│       ├── models/
-│       ├── routes/
-│       ├── server.js
-│       └── package.json
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── contexts/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── App.js
-│   │   └── index.js
-│   └── package.json
-├── package.json
-└── README.md
-```
+- Backend cart-service Dockerfile:
+<img width="802" height="757" alt="image" src="https://github.com/user-attachments/assets/2606f189-e435-45e6-aac0-a23a225e6c49" />
 
-## 🔧 API Testing
 
-You can test the APIs using tools like Postman or curl:
+### 2. Build and test the Docker images locally
 
-```bash
-# Health check for all services
-curl http://localhost:3001/health
-curl http://localhost:3002/health
-curl http://localhost:3003/health
-curl http://localhost:3004/health
+- created Docker-compose.yaml file to build the images locally. the file is placed at the root of the git repo for your reference.
 
-# Register a new user
-curl -X POST http://localhost:3001/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"firstName":"John","lastName":"Doe","email":"john@example.com","password":"password123"}'
 
-# Get products
-curl http://localhost:3002/api/products
+### 3. Tag and push the images to Docker Hub 
+- pushed all the docker images to my dockerhub.
 
-# Get categories
-curl http://localhost:3002/api/categories
-```
+<img width="1917" height="572" alt="image" src="https://github.com/user-attachments/assets/2c00f333-564f-4d5e-8495-27164ed80370" />
 
-## 🚀 Deployment
+- #  Infrastructure Provisioning with Terraform
 
-### Production Considerations
+<img width="772" height="882" alt="image" src="https://github.com/user-attachments/assets/3675d16c-ff07-44c8-8b88-43999ce51901" />
+<img width="1312" height="1030" alt="image" src="https://github.com/user-attachments/assets/4cc9f107-7fe8-4853-b82e-e463bd9a85d4" />
 
-1. **Environment Variables**: Use proper environment variable management
-2. **Database**: Use MongoDB Atlas or other managed database services
-3. **Process Management**: Use PM2 or similar for process management
-4. **Load Balancing**: Implement load balancing for high availability
-5. **Monitoring**: Add logging and monitoring solutions
-6. **Security**: Implement rate limiting, CORS, and other security measures
 
-### Docker Deployment (Future Enhancement)
 
-Each service can be containerized with Docker:
+### 1. VPC with at least one public subnet:
 
-```dockerfile
-# Example Dockerfile for a service
-FROM node:16-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --production
-COPY . .
-EXPOSE 3001
-CMD ["npm", "start"]
-```
+#### VPC with at least one public subnet is created. Please refer to terraform.tfstate file for your reference
 
-## 🤝 Contributing
+<img width="1582" height="370" alt="image" src="https://github.com/user-attachments/assets/6ab311b8-8571-471b-9f64-e70541343cc3" />
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
 
-## 📝 License
+### 2. 1 or more EC2 Instances to host the Docker containers
 
-This project is licensed under the MIT License.
+#### one EC2 Instance is also created to host the Docker containers. Please refer to terraform.tfstate file for your reference.
 
-## 🆘 Support
+<img width="1656" height="457" alt="image" src="https://github.com/user-attachments/assets/429dad39-6859-4d61-b698-292d039541af" />
 
-For support and questions:
-- Check the documentation
-- Review API endpoints and expected payloads
-- Ensure all services are running
-- Verify database connections
-- Check environment variables
 
-## 🔮 Future Enhancements
+### 3. Security Groups to allow: 
+- #### Inbound HTTP (port 80 or 3000) to the frontend
 
-- **API Gateway**: Centralized request routing and authentication
-- **Docker Containerization**: Full containerization with docker-compose
-- **Message Queues**: Async communication between services
-- **Caching**: Redis caching for improved performance
-- **Search Engine**: Elasticsearch for advanced product search
-- **File Upload**: Image upload and management
-- **Email Service**: Order confirmations and notifications
-- **Admin Dashboard**: Administrative interface
-- **Analytics**: Order and user analytics
-- **Payment Integration**: Real payment gateway integration
+#### Inbound rule allowed for HTTP (port 80 or 3000) to the frontend
+                                                               
+- #### Internal communication between services (custom ports, e.g., 3001–3004) 
+
+#### Internal communication between services (custom ports, e.g., 3001–3004) are also there.
+
+<img width="1797" height="746" alt="image" src="https://github.com/user-attachments/assets/131d583c-7892-4c99-b82a-9878169dac32" />
+
+### 4. Use Terraform provisioners or user-data scripts to:
+
+
+- Install Docker on EC2
+
+- Pull all 5 images from Docker Hub
+
+- Run the containers on proper portsDocker 
+
+- Docker is installed in EC2 via user-data script and it has successfully pulled all the images from Dockerhub and containers are also running on proper ports.
+
+  <img width="1670" height="447" alt="image" src="https://github.com/user-attachments/assets/4e62a828-f97a-42d9-869b-63fe4af61d3c" />
+
+- # Deployment and Accessibility
+
+### 1. Ensure the frontend service is publicly accessible 
+#### you can see frontend is live and publicly accessible.
+
+<img width="1911" height="840" alt="image" src="https://github.com/user-attachments/assets/a3812882-0941-4c60-b7e7-f838ae85d8a5" />
+
+
+### 2. Verify backend containers are running.
+
+#### Backend containers are already up and running.
+
+<img width="1732" height="422" alt="image" src="https://github.com/user-attachments/assets/5a2d596e-e4c7-450e-9a10-262f65790744" />
+
+
+### 3. Use Terraform output to print the public IP or DNS of the application
+
+<img width="687" height="121" alt="image" src="https://github.com/user-attachments/assets/e0589f9b-b496-41ee-9e63-d4475dfc85fb" />
+
+
+
+
